@@ -36,5 +36,7 @@ urlpatterns = [
     path('post_by_tag/<int:pk>/', PostbyTagView.as_view(), name = 'post_list_by_tag'),
     path('comment/<int:pk>/', CommentCreateView.as_view(), name = 'comment_create'),
     path('blog', views.blog, name = 'blog'),
-    path('politica-cookies/', views.politica_cookies, name = 'politica_cookies')
+    path('politica-cookies/', views.politica_cookies, name = 'politica_cookies'),
+    path('weather/', views.weather, name ='weather'),
+    path('recipe/', views.recipe, name ='recipe')
 ]

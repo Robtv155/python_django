@@ -1,45 +1,70 @@
-(function (){
-    const CONSENT_NAME = "_ga_consent";
-    const ONE_YEAR = 60 * 60 * 24 * 365;
 
-    function getCookie(name){
-        return document.cookie
-            .split("; ")
-            .find(row => row.startsWith(name + "="))
-            ?.split("=")[1]
-    }
+(() => {
+  const CONSENT_NAME = '_ga_consent';
+  const ONE_YEAR     = 60 * 60 * 24 * 365;   // en segundos
 
-if (getCookie(CONSENT_NAME) === "true"){
-    loadGA();
-    return;
-}
-const banner = document.getElementById("cookie-banner");
-banner.style.display = "block"
+  // Utilidades =========================
+  function getCookie(name) {
+    const m = document.cookie.match(
+      new RegExp('(?:^|; )' + name.replace(/[$()*+./?[\\\]^{|}-]/g, '\\$&') + '=([^;]*)')
+    );
+    return m ? decodeURIComponent(m[1]) : null;
+  }
 
-document.getElementById("btn-accept").addEventListener("click", () => {
-    document.cookie = `${CONSENT_NAME}=true; max-age=${ONE_YEAR}; path=/; samesite=Lax`;
-    loadGA();
-    banner.remove();
-});
+  function setCookie(name, value, maxAge) {
+    document.cookie = `${name}=${value}; max-age=${maxAge}; path=/; samesite=Lax`;
+  }
 
-document.getElementById("btn-reject").addEventListener("click", () => {
-    banner.remove();
-    document.cookie = `${CONSENT_NAME}=false; max-age=${ONE_YEAR}; path=/; samesite=Lax`;
-});
-
-function loadGA(){
+  function loadGA() {
     if (window.GA_INITIALIZED) return;
     window.GA_INITIALIZED = true;
 
-    const s = document.createElement("script");
-    s.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
-    //G-XXXXXXX = la id proporcionada por GA para tus mediciones
-    s.asyinc = true;
+    const s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXX';   // <-- tu ID
+    s.async = true;
     document.head.appendChild(s);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX', {anonymaze_ip: true});
-}
-}());
+    gtag('config', 'G-XXXXX', { anonymize_ip: true });
+  }
+
+  // Lógica principal ====================
+
+  const consent = getCookie(CONSENT_NAME);
+
+  // 1
+
+ 
+  
+  if (consent === 'true') {
+      loadGA();
+      return;
+    }
+    // 2
+
+  if (consent === 'false') {
+      return;
+  }
+
+    const banner   = document.getElementById('cookie-banner');
+    const btnOk    = document.getElementById('btn-accept');
+    const btnKo    = document.getElementById('btn-reject');
+
+    banner.style.display = 'block';
+
+    btnOk.addEventListener('click', () => {
+      setCookie(CONSENT_NAME, 'true', ONE_YEAR);
+      loadGA();
+      banner.remove();
+    });
+
+    btnKo.addEventListener('click', () => {
+      setCookie(CONSENT_NAME, 'false', ONE_YEAR);
+      banner.remove();
+    });
+  }
+
+
+)();
