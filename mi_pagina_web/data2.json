@@ -1,0 +1,198 @@
+[
+  {
+    "model": "contenido.post",
+    "pk": 1,
+    "fields": {
+      "title": "Viaje a Japón",
+      "content": "Perdí la noción del tiempo entre templos antiguos, neones infinitos y cerezos en flor. Cada bocado era una revelación, desde el sushi más delicado hasta un simple bol de ramen callejero. Volví con la maleta ligera, pero el alma llena de asombro.",
+      "author": 3,
+      "created_at": "2025-04-21T17:29:40.551Z"
+    }
+  },
+  {
+    "model": "contenido.post",
+    "pk": 2,
+    "fields": {
+      "title": "Viaje a Italia",
+      "content": "Recorrí callejones empedrados donde cada piedra parecía contar una historia milenaria. El arte, el vino y la pasta se fundieron en un viaje de sentidos y belleza eterna. Italia no se visita, se saborea.",
+      "author": 3,
+      "created_at": "2025-04-21T17:31:44.403Z"
+    }
+  },
+  {
+    "model": "contenido.post",
+    "pk": 3,
+    "fields": {
+      "title": "Receta de Ramen",
+      "content": "El caldo se cuece durante horas, mezclando huesos, miso o soja hasta volverse puro umami. Los fideos se preparan al dente y se sumergen justo antes de servir. Se corona con huevo marinado, panceta y cebolleta: así nace un cuenco de ramen perfecto.",
+      "author": 3,
+      "created_at": "2025-04-21T17:32:36.730Z"
+    }
+  },
+  {
+    "model": "contenido.post",
+    "pk": 4,
+    "fields": {
+      "title": "Viaje a Senegal",
+      "content": "En Senegal el ritmo lo marcan los tambores, el mar y las sonrisas. Probé el thiéboudienne entre charlas bajo baobabs y atardeceres que incendian el cielo. Me llevé una lección de calma y hospitalidad profunda.",
+      "author": 3,
+      "created_at": "2025-04-21T17:34:26.235Z"
+    }
+  },
+  {
+    "model": "contenido.post",
+    "pk": 5,
+    "fields": {
+      "title": "Viaje a Pakistán",
+      "content": "En Pakistán descubrí un mosaico de montañas majestuosas, bazares bulliciosos y hospitalidad sincera. Compartí chai caliente y curry especiado con extraños que pronto fueron amigos. Su belleza, como su historia, es intensa y vibrante.",
+      "author": 3,
+      "created_at": "2025-04-21T17:42:56.708Z"
+    }
+  },
+  {
+    "model": "contenido.post",
+    "pk": 6,
+    "fields": {
+      "title": "Receta Cuscús",
+      "content": "Se cuece el cuscús al vapor con paciencia, hasta que cada grano queda suelto y ligero. Se acompaña con verduras tiernas, garbanzos y cordero especiado en un caldo aromático. Al servir, es un festín humilde y perfumado que reúne a todos en torno a la mesa.",
+      "author": 3,
+      "created_at": "2025-04-21T17:44:07.243Z"
+    }
+  },
+  {
+    "model": "contenido.post",
+    "pk": 10,
+    "fields": {
+      "title": "Viaje a Perú",
+      "content": "Grandes monumentos, gran gente y buena comida",
+      "author": 4,
+      "created_at": "2025-04-29T18:01:09.700Z"
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 1,
+    "fields": {
+      "name": "#Japon",
+      "posts": [1, 3]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 2,
+    "fields": {
+      "name": "#Viaje",
+      "posts": [1, 2, 4, 5]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 3,
+    "fields": {
+      "name": "#Asia",
+      "posts": [1, 5]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 4,
+    "fields": {
+      "name": "#Italia",
+      "posts": [2]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 5,
+    "fields": {
+      "name": "#Europa",
+      "posts": [2]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 6,
+    "fields": {
+      "name": "#Comida",
+      "posts": [3, 6]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 7,
+    "fields": {
+      "name": "#Senegal",
+      "posts": [4]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 8,
+    "fields": {
+      "name": "#Africa",
+      "posts": [4, 6]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 9,
+    "fields": {
+      "name": "#Pakistan",
+      "posts": [5]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 10,
+    "fields": {
+      "name": "#Viajes",
+      "posts": [10]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 11,
+    "fields": {
+      "name": "#America",
+      "posts": [10]
+    }
+  },
+  {
+    "model": "contenido.tag",
+    "pk": 12,
+    "fields": {
+      "name": "#Perú",
+      "posts": [10]
+    }
+  },
+  {
+    "model": "contenido.comment",
+    "pk": 1,
+    "fields": {
+      "content": "Muy interesante tu entrada. A mi me encanta Italia",
+      "post": 2,
+      "author": 3,
+      "created_at": "2025-04-21T17:44:58.179Z"
+    }
+  },
+  {
+    "model": "contenido.comment",
+    "pk": 2,
+    "fields": {
+      "content": "Me uno a los comentarios.",
+      "post": 2,
+      "author": 3,
+      "created_at": "2025-04-21T17:45:18.074Z"
+    }
+  },
+  {
+    "model": "contenido.comment",
+    "pk": 5,
+    "fields": {
+      "content": "Gracias por tu reseña del viaje.",
+      "post": 1,
+      "author": 1,
+      "created_at": "2025-04-22T16:47:08.442Z"
+    }
+  }
+]
