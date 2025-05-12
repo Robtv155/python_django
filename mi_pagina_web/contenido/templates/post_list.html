@@ -10,7 +10,7 @@
 <br>
 
 <div class="grid">
-  {% for post in page_obj %}
+  <!-- {% for post in page_obj %}
   <div class="tarjeta">
     <h2>{{ post.title }}</h2>
     <p>{{ post.content |truncatechars:20 }}</p>
@@ -20,7 +20,7 @@
       <a href="{% url 'post_list_by_tag' i.pk %}"><p class="tag">{{ i.name }}</p></a>
     {% endfor %}
   </div>
-  {% endfor %}
+  {% endfor %} -->
 </div>
 
 <!-- Controles de paginación -->
@@ -39,6 +39,6 @@
   {% endif %}
 </div>
 {% endblock %}
-<!-- {% block extra_js %}
+{% block extra_js %}
 <script src="{%static 'js/post_list.js' %}"></script>
-{% endblock %} -->
+{% endblock %}
