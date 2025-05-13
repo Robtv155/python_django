@@ -13,6 +13,10 @@ import requests
 from django.http import JsonResponse
 from django.views.decorators.cache import cache_page
 from django.conf import settings
+#pagination
+from rest_framework.pagination import PageNumberPagination
+
+
 # Create your views here.
 
 def index(request):
@@ -299,3 +303,15 @@ def recipe(request):
         respuesta = {'error': 'No se pudo obtener la receta'}
 
     return JsonResponse(respuesta)
+
+#paginacion
+
+from rest_framework.pagination import PageNumberPagination
+
+class PostPagination(PageNumberPagination):
+    page_size = 4  # <-- Aquí el número de posts por página
+
+class PostListAPIView(generics.ListAPIView):
+    queryset = Post.objects.all().order_by('-created')  # o por id, como prefieras
+    serializer_class = PostSerializer
+    pagination_class = PostPagination

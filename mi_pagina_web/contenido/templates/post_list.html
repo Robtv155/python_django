@@ -23,7 +23,7 @@
   {% endfor %} -->
 </div>
 
-<!-- Controles de paginación -->
+<!-- Controles de paginación
 <div class="paginacion">
   {% if page_obj.has_previous %}
     <a href="?page=1">&laquo; Primero</a>
@@ -37,7 +37,15 @@
     <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
     <a href="?page={{ page_obj.paginator.num_pages }}">Último &raquo;</a>
   {% endif %}
+</div> -->
+
+<!-- Controles de paginación generados por JS -->
+<div class="paginacion">
+  <button id="prev-btn" disabled>Anterior</button>
+  <span id="page-info">Página 1</span>
+  <button id="next-btn">Siguiente</button>
 </div>
+
 {% endblock %}
 {% block extra_js %}
 <script src="{% static 'js/post_list.js' %}"></script>
