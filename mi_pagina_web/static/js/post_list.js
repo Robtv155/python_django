@@ -1,4 +1,4 @@
-/*function cardHTML(post) {
+function cardHTML(post) {
     return `
         <div class="tarjeta">
             <h2>${post.title}</h2>
@@ -23,9 +23,9 @@ function loadPost(page = 1) {
 }
 
 let nextPage = 1;
-loadPost();*/
+loadPost();
 
-function cardHTML(post) {
+/*function cardHTML(post) {
     return `
         <div class="tarjeta">
             <h2>${post.title}</h2>
@@ -58,4 +58,4 @@ let nextPage = 1;
 
 document.addEventListener('DOMContentLoaded', function () {
     loadPost();
-});
+});*/
