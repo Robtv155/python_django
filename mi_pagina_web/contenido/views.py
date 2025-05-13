@@ -15,6 +15,8 @@ from django.views.decorators.cache import cache_page
 from django.conf import settings
 #pagination
 from rest_framework.pagination import PageNumberPagination
+from rest_framework import generics
+from .serializers import PostSerializer
 
 
 # Create your views here.
