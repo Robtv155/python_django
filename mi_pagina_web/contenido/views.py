@@ -314,6 +314,6 @@ class PostPagination(PageNumberPagination):
     page_size = 4  # <-- Aquí el número de posts por página
 
 class PostListAPIView(generics.ListAPIView):
-    queryset = Post.objects.all().order_by('-created')  # o por id, como prefieras
+    queryset = Post.objects.all().order_by('-created_at')  # o por id, como prefieras
     serializer_class = PostSerializer
     pagination_class = PostPagination
