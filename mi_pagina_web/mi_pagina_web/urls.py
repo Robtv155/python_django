@@ -24,6 +24,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('contenido.urls')),
+    path('api/', include('contenido.api_urls')),
 ]
 
 handler404 = 'contenido.views.custom_404'
